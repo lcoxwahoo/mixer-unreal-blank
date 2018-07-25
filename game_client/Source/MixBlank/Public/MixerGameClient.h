@@ -17,28 +17,6 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMixerLoginStateChangedDelegate, boo
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FParticipantClickDelegate, int32, participantID, float, x, float, y);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_FiveParams(FParticipantEventDelegate, int32, participantID, FString, participantName, FString, code, float, x, float, y);
 
-UENUM(BlueprintType)
-enum class EStatCategory : uint8
-{
-	SCORE			UMETA(DisplayName = "Score"),
-	HITS			UMETA(DisplayName = "Hits"),
-	HEADSHOTS		UMETA(DisplayName = "Headshots"),
-	DAMAGE_DEALT	UMETA(DisplayName = "Damage Dealt"),
-	KILLS			UMETA(DisplayName = "Kills"),
-
-	MAX_CATEGORIES	UMETA(Hidden),
-};
-
-USTRUCT()
-struct FSubSessionWinner
-{
-	GENERATED_BODY()
-
-	UPROPERTY()
-		int32 ParticipantID;
-
-};
-
 UCLASS()
 class MIXBLANK_API AMixerGameClient : public AActor
 {
